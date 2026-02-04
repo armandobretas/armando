@@ -12,7 +12,11 @@ import { ParticlesBackground } from '@/components/ParticlesBackground';
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative">
+    <main
+      className="min-h-screen relative"
+      role="main"
+      aria-label="Currículo de Armando Bretas"
+    >
       <ParticlesBackground />
       <Navigation />
       <Hero />

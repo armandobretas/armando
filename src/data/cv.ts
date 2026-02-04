@@ -1,4 +1,8 @@
+const SiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://armando-bretas.vercel.app';
+
 export const cvData = {
+  siteUrl: SiteUrl,
   name: 'Armando Bretas',
   initials: 'AB',
   photo: '/1667316741214.jpeg',

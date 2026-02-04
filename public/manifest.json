@@ -1,0 +1,10 @@
+{
+  "name": "Armando Bretas - Senior Front-end Developer",
+  "short_name": "Armando Bretas",
+  "description": "Desenvolvedor Front-end Sênior com 8+ anos de experiência em React, Flutter e React Native",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#06b6d4",
+  "lang": "pt-BR"
+}
