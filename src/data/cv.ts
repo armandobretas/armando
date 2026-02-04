@@ -11,8 +11,8 @@ export const cvData = {
     stats: [
       { value: '8', suffix: '+', label: 'anos de experiência' },
       { value: '3000', suffix: '+', label: 'usuários em plataformas' },
-      { value: '4', suffix: '+', label: 'anos na Levva' },
-      { value: '4', suffix: '+', label: 'anos na Gazin' },
+      { value: '8', suffix: '+', label: 'projetos em produção' },
+      { value: '6', suffix: '+', label: 'clientes enterprise' },
     ],
     bio: [
       'Desenvolvedor Front-end Sênior com 8+ anos de experiência em desenvolvimento web e mobile, especializado em React, Angular, Flutter e React Native.',
@@ -24,10 +24,10 @@ export const cvData = {
   skills: {
     main: [
       { name: 'React / Next.js', level: 95 },
-      { name: 'Flutter', level: 90 },
+      { name: 'Flutter', level: 80 },
       { name: 'React Native', level: 90 },
       { name: 'TypeScript / JavaScript', level: 95 },
-      { name: 'Angular', level: 80 },
+      { name: 'Angular', level: 50 },
     ],
     categories: [
       {
