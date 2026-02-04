@@ -1,0 +1,68 @@
+---
+alwaysApply: true
+---
+});
+```
+
+### Toast com Ação
+
+```typescript
+toast.error("Erro de Conexão", {
+  action: {
+    label: "Tentar Novamente",
+    onClick: () => retryConnection(),
+  },
+});
+```
+
+### Toast com Ícone Customizado
+
+```typescript
+toast.success("Arquivo Enviado", {
+  icon: "📁",
+});
+```
+
+## 📱 Responsividade
+
+O Sonner é automaticamente responsivo e se adapta a diferentes tamanhos de tela:
+
+- **Desktop**: Aparece no top-right
+- **Mobile**: Ajusta posição automaticamente
+- **Tablet**: Mantém posicionamento consistente
+
+## 🔍 Regras de Console
+
+### ✅ Permitido durante Debugging
+
+Durante o desenvolvimento e debugging, você **PODE** usar qualquer tipo de console:
+- ✅ **`console.log()`** - Para debugging temporário
+- ✅ **`console.warn()`** - Para debugging temporário
+- ✅ **`console.error()`** - Para debugging temporário
+- ✅ **`console.info()`** - Para debugging temporário
+- ✅ **`console.debug()`** - Para debugging temporário
+
+### ❌ Proibido no Código Fonte Final
+
+- ❌ **NENHUM tipo de console** deve permanecer no código fonte
+- ❌ **Todos os console** devem ser removidos antes do commit
+- ❌ **Use Sonner** para feedback ao usuário ao invés de console
+
+### Regras ESLint
+
+O projeto possui regras ESLint que:
+
+1. **Bloqueiam `alert()`** - Força uso do Sonner
+2. **Bloqueiam `confirm()`** - Força uso do Sonner
+3. **Bloqueiam todos os console** - Nenhum console deve permanecer no código fonte final
+4. **Permitem console durante desenvolvimento** - Mas devem ser removidos antes do commit
+
+## 🚀 Benefícios
+
+- ✅ **UX Consistente** - Mesma experiência em toda a aplicação
+- ✅ **Não Intrusivo** - Não bloqueia a interface
+- ✅ **Auto-dismiss** - Fecha automaticamente
+- ✅ **Acessível** - Suporte a leitores de tela
+- ✅ **Responsivo** - Funciona em todos os dispositivos
+- ✅ **Customizável** - Fácil de personalizar
+- ✅ **Performance** - Leve e eficiente

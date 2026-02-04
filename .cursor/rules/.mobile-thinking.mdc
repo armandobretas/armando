@@ -1,0 +1,9 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+### Regra de criaçao de layout
+
+- ✅ **SEMPRE** priorizar o mobile

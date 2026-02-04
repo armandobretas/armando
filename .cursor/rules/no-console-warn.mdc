@@ -1,0 +1,105 @@
+---
+alwaysApply: true
+---
+
+# 🚫 Regra Obrigatória - Proibição de TODOS os console no Código Fonte
+
+## ✅ PERMITIDO - Apenas durante Debugging
+
+Durante o desenvolvimento e debugging, você **PODE** usar qualquer tipo de console:
+- ✅ **`console.log()`** - Para debugging temporário
+- ✅ **`console.warn()`** - Para debugging temporário
+- ✅ **`console.error()`** - Para debugging temporário
+- ✅ **`console.info()`** - Para debugging temporário
+- ✅ **`console.debug()`** - Para debugging temporário
+
+## ❌ FORBIDDEN - Nenhum console no Código Fonte Final
+
+- **NEVER** commit código com **NENHUM** tipo de console
+- **NEVER** deixar **NENHUM** console em produção
+- **NEVER** fazer commit com `console.log()`, `console.warn()`, `console.error()`, `console.info()`, ou `console.debug()`
+
+## ✅ REQUIRED - Alternativas para Feedback ao Usuário
+
+### Use Sonner toast para feedback ao usuário:
+
+```typescript
+import { toast } from "sonner";
+
+// ✅ Para erros
+toast.error("Erro ao processar solicitação");
+
+// ✅ Para avisos
+toast.warning("Atenção: dados podem estar desatualizados");
+
+// ✅ Para informações
+toast.info("Processando sua solicitação...");
+
+// ✅ Para sucesso
+toast.success("Operação realizada com sucesso!");
+```
+
+## 🛡️ Padrão de Tratamento de Erros
+
+### Em Blocos try/catch
+
+```typescript
+// ✅ ALLOWED - Durante debugging apenas (remover antes do commit)
+try {
+  await someOperation();
+} catch (error) {
+  console.log("DEBUG: Operation error", error); // ✅ Temporário - remover antes do commit
+  console.warn("DEBUG: Warning", error); // ✅ Temporário - remover antes do commit
+  console.error("DEBUG: Error details", error); // ✅ Temporário - remover antes do commit
+  toast.error("Erro ao processar operação");
+}
+
+// ✅ REQUIRED - Código fonte final (sem console)
+try {
+  await someOperation();
+} catch (error) {
+  toast.error("Erro ao processar operação");
+  // Logging estruturado pode ser adicionado no futuro
+}
+```
+
+### Em Handlers de Eventos
+
+```typescript
+// ✅ ALLOWED - Durante debugging apenas (remover antes do commit)
+onClick={() => {
+  console.log("DEBUG: Button clicked:", id); // ✅ Temporário - remover antes do commit
+  handleButtonClick(id);
+}}
+
+// ✅ REQUIRED - Código fonte final (sem console)
+onClick={() => handleButtonClick(id)}
+```
+
+## 🚨 Enforcement
+
+- ❌ **Pull requests com QUALQUER tipo de console serão REJEITADOS**
+- ❌ **Código com console será BLOQUEADO**
+- ✅ **SEMPRE** remover **TODOS** os console antes de commits
+- ✅ **SEMPRE** usar Sonner para feedback ao usuário
+- ✅ **PODE** usar qualquer console durante desenvolvimento/debugging
+
+## 📋 Checklist
+
+Antes de fazer commit:
+
+- [ ] Removi todos os `console.log()`
+- [ ] Removi todos os `console.warn()`
+- [ ] Removi todos os `console.error()`
+- [ ] Removi todos os `console.info()`
+- [ ] Removi todos os `console.debug()`
+- [ ] Substituí por `toast` quando necessário para feedback ao usuário
+- [ ] Verifiquei que não há NENHUM console no código fonte
+
+## 🎯 Benefícios
+
+- ✅ **UX Consistente** - Usuários recebem feedback adequado via toast
+- ✅ **Código Limpo** - Sem poluição de console em produção
+- ✅ **Manutenibilidade** - Erros tratados de forma consistente
+- ✅ **Profissionalismo** - Código sem console desnecessário
+- ✅ **Flexibilidade** - Pode usar qualquer console durante debugging
